@@ -10,9 +10,10 @@ procesar_fft.m  # Script principal que integra todo y ejecuta el análisis compl
 
 dia03026.txt    # Aquí se encuentran todos los datos.
 
-# Uso
-...
-
+# Uso - Hacer cambios
+1. **Preparación**: Asegúrate de que el archivo `dia03026.txt` esté en la carpeta `/data`.
+2. **Ejecución**: Corre el script principal desde la raíz:
+   *main*
 
 # Licencia
-MIT: Libre para uso academico y personal.
+**MIT**: Libre para uso academico y personal.
