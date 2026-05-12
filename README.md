@@ -5,8 +5,8 @@ El objetivo es procesar la señal temporal para extraer componentes periódicos,
 
 # Estructura 
 leer_datos.m &nbsp # Lee el archivo de texto y realiza la limpieza de datos nulos.  
-main.m &nbsp # Implementa la FFT y calcula el espectro de la magnitud.  
-procesar_fft.m &nbsp # Script principal que integra todo y ejecuta el análisis completo.  
+main.m &nbsp;&nbsp;&nbsp; # Implementa la FFT y calcula el espectro de la magnitud.  
+procesar_fft.m &nbsp;&nbsp; # Script principal que integra todo y ejecuta el análisis completo.  
 
 dia03026.txt    # Aquí se encuentran todos los datos.
 
