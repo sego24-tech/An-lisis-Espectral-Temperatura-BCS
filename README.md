@@ -8,5 +8,5 @@ leer_datos    # Lee el archivo de texto y realiza la limpieza de datos nulos.
 main          # Implementa la FFT y calcula el espectro de la magnitud.
 procesar_fft  # Script principal que integra todo y ejecuta el análisis completo.
 
-#Uso
+# Uso
 ...
