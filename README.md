@@ -4,6 +4,5 @@ Proyecto Matemáticas IV - Este proyecto va a aplicar la transformada rápida de
 El objetivo es procesar la señal temporal para extraer componentes periódicos, con el ciclo diario de temperatura.
 
 # Estructura 
-|leer_datos|
-|main|
-|procesar_fft|
+|leer_datos||main||procesar_fft|
+
