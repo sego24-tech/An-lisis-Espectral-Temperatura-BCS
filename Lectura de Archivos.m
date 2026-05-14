@@ -1,4 +1,3 @@
-
 % Saltamos las 25 líneas de encabezado con HeaderLines
 fid = fopen('dia03026.txt', 'r');
 datos = textscan(fid, '%s %s %s %s %s', 'HeaderLines', 25, 'Delimiter', '\t');
