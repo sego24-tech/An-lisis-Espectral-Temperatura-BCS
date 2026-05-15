@@ -11,7 +11,7 @@ El objetivo es procesar la señal temporal para extraer componentes periódicos,
 dia03026.txt    # Aquí se encuentran todos los datos.
 
 # Uso - Hacer cambios
-1. **Preparación**: Asegúrate de que el archivo `dia03026.txt` esté en la carpeta `/data`.
+1. **Preparación**: Asegúrate de que el archivo `dia03026.txt` esté en la carpeta dondé se encuentre el script.
 2. **Ejecución**: Corre el script principal desde la raíz:
    *main*
 
