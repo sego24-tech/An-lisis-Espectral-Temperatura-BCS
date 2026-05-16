@@ -37,37 +37,25 @@ Proyecto_Clima/
 | Archivo | `dia03026.txt` |
 | Fuente | CONAGUA — Base de Datos Climatológica Nacional |
 | Estación | 03026 — La Paz (OBS) |
-| Coordenadas | 24.117° N, 110.317° O |
-| Altitud | 10 msnm |
 | Período | Febrero 1943 – Febrero 2026 |
 | Total de registros | 11,143 días |
-
-El archivo contiene **25 líneas de encabezado institucional** antes de los datos.
-Los valores faltantes están codificados como la cadena `"NULO"`, que `str2double`
-convierte automáticamente en `NaN`.
 
 ---
 
 ## 4. Preprocesamiento
 
-### 4.1 Lectura del archivo
-
+### Lectura del archivo
 ```octave
 fid = fopen('dia03026.txt', 'r');
 datos = textscan(fid, '%s %s %s %s %s', 'HeaderLines', 25, 'Delimiter', '\t');
 fclose(fid);
 ```
 
-El parámetro `'HeaderLines', 25` es obligatorio. Usar `0` provoca que el texto
-del encabezado sea interpretado como datos y corrompe toda la serie.
-
-### 4.2 Parseo de fechas y clave mes-año
-
+### Parseo de fechas y clave mes-año
 Las fechas se parsean celda por celda sobre la matriz producida por `char(fechas_str)`.
 Los registros con fecha malformada se descartan antes de cualquier cálculo.
 
 Para agrupar sin errores de precisión flotante se define la clave entera:
-
 $$\text{clave}(a, m) = a \times 100 + m$$
 
 Ejemplo: julio de 1998 → $199807$.
@@ -75,7 +63,6 @@ Ejemplo: julio de 1998 → $199807$.
 ---
 
 ## 5. Control de calidad
-
 Un año es **válido** para análisis gráfico si cumple simultáneamente:
 
 $$\frac{N_{\text{días con dato real}}^{(a)}}{N_{\text{días registrados}}^{(a)}} \geq 0.70 \qquad \text{y} \qquad N_{\text{días registrados}}^{(a)} \geq 300$$
@@ -94,7 +81,6 @@ y del climograma.
 ---
 
 ## 6. Imputación de valores faltantes
-
 - **Tmax y Tmin:** los `NaN` se sustituyen por la media del mismo mes-año al
   que pertenece el día. Si el mes-año completo está vacío, se usa la media global.
 - **Precipitación y evaporación:** los `NaN` se sustituyen por `0`.
@@ -104,32 +90,30 @@ y del climograma.
 ---
 
 ## 7. Estadísticas calculadas
-
 ### Agrupación mensual
 
 | Variable | Cálculo |
 |----------|---------|
-| `Tmax_mensual` | `max(Tmax)` de los días del mes |
-| `Tmin_mensual` | `min(Tmin)` de los días del mes |
-| `Tprom_mensual` | `mean(Tprom)` de los días del mes |
-| `Prec_mensual` | `sum(Precip)` de los días del mes |
+| `Tmax_mensual` | `max(Tmax)` |
+| `Tmin_mensual` | `min(Tmin)` |
+| `Tprom_mensual` | `mean(Tprom)` |
+| `Prec_mensual` | `sum(Precip)` |
 
 ### Agrupación anual
 
 | Variable | Cálculo |
 |----------|---------|
-| `Tmax_anual` | `max(Tmax)` de todos los días del año |
-| `Tmin_anual` | `min(Tmin)` de todos los días del año |
-| `Tprom_anual` | `mean(Tprom)` de todos los días del año |
-| `Prec_anual` | `sum(Precip)` de todos los días del año |
+| `Tmax_anual` | `max(Tmax)` |
+| `Tmin_anual` | `min(Tmin)` |
+| `Tprom_anual` | `mean(Tprom)` |
+| `Prec_anual` | `sum(Precip)` |
 
-El climograma usa el promedio histórico de cada mes calendario (1–12),
+El climograma usa el promedio histórico de cada mes calendario, 
 calculado únicamente sobre meses pertenecientes a años válidos.
 
 ---
 
 ## 8. Análisis espectral
-
 La base de datos presenta años completos sin registros. Aplicar la FFT
 directamente sobre los datos disponibles produce un ciclo detectado de ≈ 348 días
 en lugar de los 365.25 esperados, porque los huecos comprimen el eje temporal.
@@ -148,7 +132,6 @@ $$f \in \left(\frac{1}{600\,\text{días}},\; \frac{1}{60\,\text{días}}\right) \
 ---
 
 ## 9. Visualizaciones
-
 El script genera exactamente **cuatro figuras**:
 
 | Figura | Contenido |
@@ -196,7 +179,3 @@ El script genera exactamente **cuatro figuras**:
    - Capturas de pantalla de las cuatro figuras generadas.
 
 ---
-
-**Especificación compilada:** 2026-05-13  
-**Estación analizada:** 03026 — La Paz (OBS), Baja California Sur  
-**Estado:** Activa ✅
