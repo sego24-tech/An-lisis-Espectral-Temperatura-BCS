@@ -160,6 +160,7 @@ El script genera exactamente **cuatro figuras**:
 1. Archivo `analisis_climatologico.m` ejecutable sin modificaciones.
 2. Archivo `dia03026.txt` en el mismo directorio de trabajo.
 
+Estructura de `analisis_climatologico.m`
 Sección 1: Inicialización y Lectura:** Limpieza del entorno, validación de existencia de `dia03026.txt` y salto correcto de las
 25 líneas de encabezado de CONAGUA.
 Sección 2: Procesamiento de Fechas:** Extracción de componentes temporales enteros y vectorización mediante clave única mes-año
