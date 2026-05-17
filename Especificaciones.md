@@ -159,9 +159,13 @@ El script genera exactamente **cuatro figuras**:
 
 1. Archivo `analisis_climatologico.m` ejecutable sin modificaciones.
 2. Archivo `dia03026.txt` en el mismo directorio de trabajo.
-3. Reporte técnico en Markdown (`REPORTE.md`) que incluya:
-   - Lectura de la gráfica FFT: ¿qué ciclo se detecta y qué significa físicamente?
-   - Análisis de la tendencia de calentamiento: tasa, cambio total e interpretación.
-   - Capturas de pantalla de las cuatro figuras generadas.
+  ```
+Sección 1: Inicialización y Lectura:** Limpieza del entorno, validación de existencia de `dia03026.txt` y salto correcto de las 25 líneas de encabezado de CONAGUA.
+Sección 2: Procesamiento de Fechas:** Extracción de componentes temporales enteros y vectorización mediante clave única mes-año libre de errores de coma flotante.
+Sección 3: Filtro de Calidad e Imputación:** Evaluación de años válidos e imputación de valores faltantes aplicando promedios basados estrictamente en la estacionalidad mensual.
+Sección 4: Computación Estadística:** Cálculo secuencial de matrices descriptivas mensuales, anuales y promedios climáticos históricos de control.
+Sección 5: Módulo Espectral (FFT):** Reconstrucción continua por interpolación lineal, remoción de la tendencia por regresión y aislamiento algorítmico automatizado de la frecuencia/período dominante.
+Sección 6: Renderizado Gráfico:** Generación automatizada de las 4 figuras.
+  ```
 
 ---
