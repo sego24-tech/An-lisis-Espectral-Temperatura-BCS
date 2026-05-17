@@ -143,21 +143,7 @@ El script genera exactamente **cuatro figuras**:
 
 ---
 
-## 10. Criterios de aceptación
-
-| Criterio | Verificación |
-|----------|--------------|
-| El script corre sin errores en Octave 6.x o superior | Ejecución directa |
-| Se generan exactamente 4 figuras | Inspección visual |
-| La tabla anual muestra `*` en años con datos insuficientes | Lectura de consola |
-| El ciclo dominante detectado por FFT está entre 350 y 380 días | Valor impreso en consola |
-| Los años inválidos no aparecen en las líneas principales de las gráficas mensuales | Inspección visual |
-| La tendencia se imprime en lenguaje natural, no solo el número | Lectura de consola |
-| El climograma resalta el mes más lluvioso con color diferente y valor anotado | Inspección visual |
-
----
-
-## 11. Restricciones de implementación
+## 10. Restricciones de implementación
 
 | Elemento | Permitido | No permitido |
 |----------|-----------|--------------|
@@ -169,7 +155,7 @@ El script genera exactamente **cuatro figuras**:
 
 ---
 
-## 12. Entregables
+## 11. Entregables
 
 1. Archivo `analisis_climatologico.m` ejecutable sin modificaciones.
 2. Archivo `dia03026.txt` en el mismo directorio de trabajo.
